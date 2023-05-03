@@ -13,8 +13,6 @@ export default function TabOneScreen() {
     renderItem={({item}) => <Tweet tweet={item} />}
     keyExtractor={(item) => item.id}
     showsVerticalScrollIndicator={false}
-
-  
     />
     </View>
 

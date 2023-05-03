@@ -1,9 +1,13 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 
+import { TweetType } from "../types";
+type TweetProps = {
+  tweet: TweetType;
+};
 
-
-const Tweet = ({tweet}) => {
+const Tweet = ({ tweet }: TweetProps) => {
+    console.log(tweet.user.image.toLowerCase())
   return (
     <View style={styles.container}>
       <Image style={styles.userImage} source={{ uri: tweet.user.image }} />
@@ -22,7 +26,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: "lightgrey",
     width: "100%",
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   userImage: {
     width: 50,
