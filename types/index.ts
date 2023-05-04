@@ -1,4 +1,4 @@
-type User = {
+export type User = {
   id: string;
   name: string;
   username: string;
@@ -9,7 +9,7 @@ export type TweetType = {
   id: string;
   content: string;
   user: User;
-  createAt: string;
+  createdAt: string;
   image?: string;
   numberOfComments?: number;
   numberOfRetweets?: number;

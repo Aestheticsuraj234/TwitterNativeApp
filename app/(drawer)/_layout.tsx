@@ -34,7 +34,7 @@ export default function DrawerLayout() {
         options={{ headerShown: false, title: 'Home' }}
       />
       <Drawer.Screen name="bookmarks" options={{ title: 'Bookmarks' }} />
-      <Drawer.Screen name="twitter-blue" options={{ title: 'Twitter Blue' }} />
+      <Drawer.Screen name="twitter_blue" options={{ title: 'Twitter Blue' }} />
     </Drawer>
   );
 }

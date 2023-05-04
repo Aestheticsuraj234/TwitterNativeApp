@@ -1,21 +1,18 @@
-import { StyleSheet, Text, View, Image ,TouchableOpacity} from "react-native";
-import React from "react";
-import { Entypo, EvilIcons } from "@expo/vector-icons";
+import { View, Text } from 'react-native';
+import { EvilIcons } from '@expo/vector-icons';
 
 type IconButtonProps = {
-    icon: React.ComponentProps<typeof EvilIcons>['name'];
-    text?: number | string;
-  };
+  icon: React.ComponentProps<typeof EvilIcons>['name'];
+  text?: string | number;
+};
+
 const IconButton = ({ icon, text }: IconButtonProps) => {
-    return (
-      <TouchableOpacity style={{ flexDirection: "row", alignItems: "center" }}>
-  
-        <EvilIcons name={icon} size={24} color="gray" />
-        <Text style={{ fontSize: 12, color: "gray" }}>{text}</Text>
-      </TouchableOpacity>
-    );
-  };
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <EvilIcons name={icon} size={22} color="gray" />
+      <Text style={{ fontSize: 12, color: 'gray' }}>{text}</Text>
+    </View>
+  );
+};
 
-export default IconButton
-
-const styles = StyleSheet.create({})
+export default IconButton;
