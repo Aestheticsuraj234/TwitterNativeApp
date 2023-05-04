@@ -1,14 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { View, Text } from 'react-native';
 
 const TwitterBlue = () => {
   return (
     <View>
-      <Text>twitter_blue</Text>
+      <Text>twitter-blue</Text>
     </View>
-  )
-}
+  );
+};
 
-export default TwitterBlue
-
-const styles = StyleSheet.create({})
+export default TwitterBlue;
