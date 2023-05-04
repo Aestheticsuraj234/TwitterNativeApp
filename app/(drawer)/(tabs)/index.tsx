@@ -1,7 +1,7 @@
 import { StyleSheet, View, FlatList, Pressable,SafeAreaView } from "react-native";
-import tweets from "../../assets/data/tweets";
+import tweets from "../../../assets/data/tweets";
 import { AntDesign } from "@expo/vector-icons";
-import Tweet from "../../components/Tweet";
+import Tweet from "../../../components/Tweet";
 import { Link } from "expo-router";
 export default function TabOneScreen() {
   return (
