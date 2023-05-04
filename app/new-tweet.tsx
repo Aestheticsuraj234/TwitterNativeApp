@@ -1,5 +1,5 @@
 import { Link, useRouter } from "expo-router";
-import {useState} from "react"
+import { useState } from "react";
 import {
   View,
   StyleSheet,
@@ -10,7 +10,6 @@ import {
   SafeAreaView,
 } from "react-native";
 
-
 const user = {
   id: "u1",
   username: "VadimNotJustDev",
@@ -20,46 +19,48 @@ const user = {
 };
 
 export default function NewTweet() {
-    const router = useRouter()
-    const [text , setText] = useState("")
+  const router = useRouter();
+  const [text, setText] = useState("");
   const onTweetPress = () => {
+    if (text.length === 0) {
+      return;
+    }
+
     console.warn(`Tweet Post ${text}`);
-    setText('')
-    router.back()
+    setText("");
+    router.back();
   };
 
   return (
-    <SafeAreaView style={{flex:1 , backgroundColor:'#fff' , paddingTop:18}}>
- 
-    <View style={styles.container}>
-      {/* cancel button & Tweet Button */}
-      <View style={styles.buttonContainer}>
-        <Link href="../" style={{ fontSize: 16 }}>
-          Cancel
-        </Link>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff", paddingTop: 18 }}>
+      <View style={styles.container}>
+        {/* cancel button & Tweet Button */}
+        <View style={styles.buttonContainer}>
+          <Link href="../" style={{ fontSize: 16 }}>
+            Cancel
+          </Link>
 
-        <Pressable onPress={onTweetPress} style={styles.button}>
-          <Text style={styles.buttonText}>Tweet</Text>
-        </Pressable>
-      </View>
+          <Pressable onPress={onTweetPress} style={styles.button}>
+            <Text style={styles.buttonText}>Tweet</Text>
+          </Pressable>
+        </View>
 
-      <View style={styles.inputContainer}>
-        <Image source={{ uri: user.image }} style={styles.image} />
-        <TextInput
-          placeholder="What's Happening?"
-          style={{
-            flex: 1,
-            paddingVertical: 8, // adjust the vertical padding to move the placeholder text down
-            textAlignVertical: "top", // set the vertical alignment to top to prevent the text from being centered
-          }}
-          numberOfLines={10}
-          multiline
-          value={text}
-          onChangeText={setText}
-        />
+        <View style={styles.inputContainer}>
+          <Image source={{ uri: user.image }} style={styles.image} />
+          <TextInput
+            placeholder="What's Happening?"
+            style={{
+              flex: 1,
+              paddingVertical: 8, // adjust the vertical padding to move the placeholder text down
+              textAlignVertical: "top", // set the vertical alignment to top to prevent the text from being centered
+            }}
+            numberOfLines={10}
+            multiline
+            value={text}
+            onChangeText={setText}
+          />
+        </View>
       </View>
-    </View>
-           
     </SafeAreaView>
   );
 }
